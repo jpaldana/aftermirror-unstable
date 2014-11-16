@@ -1,0 +1,491 @@
+/*
+#sidebar {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	width: 200px;
+	border-right: solid 1px gray;
+}
+*/
+html, body {
+	/*background-color: #428BEB;*/
+}
+#sidebarContainer {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	width: 200px;
+	overflow: hidden;
+}
+@media screen and (min-width: 820px) {
+}
+@media screen and (max-width: 819px) {
+	#sidebarContainer.sidebarInvisible {
+		display: none;
+	}
+}
+#sidebar {
+	/*
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 200px;
+	*/
+	/*border-right: solid 1px gray;*/
+	/*background-color: #428BEB;*/
+	/*background-color: rgba(0, 0, 0, 0.5);*/
+}
+#sidebar h1.title {
+	text-align: center;
+	margin: 20px 0px 20px 0px;
+	font-size: 24px;
+}
+.buttonLink {
+	display: block;
+	padding: 5px 10px;
+	margin: 5px 10px;
+	/*color: black;*/
+	text-decoration: none;
+	font-variant: small-caps;
+}
+.buttonLink:hover {
+	background-color: #125BBB;
+	/*color: #E1E1E1;*/
+	cursor: pointer;
+}
+#sidebar div.profilePicture {
+	margin: 0px 36px;
+}
+#sidebar span.profileUsername {
+	display: block;
+	text-align: center;
+	font-size: 14px;
+}
+
+/* Sidebar animation via: http://apeatling.com/2014/building-smooth-sliding-mobile-menu/ */
+.animating #sidebar, .menu-visible #sidebar {
+	display: block;
+}
+.animating #content {
+	transition: transform 0.25s ease-in-out;
+	-webkit-transition: -webkit-transform 0.25s ease-in-out;
+}
+.animating.right #content {
+	transform: translate3d(-200px, 0, 0);
+	-webkit-transform: translate3d(-200px, 0, 0);
+}
+.animating.left #content {
+	transform: translate3d(200px, 0, 0);
+	-webkit-transform: translate3d(200px, 0, 0);
+}
+.menu-visible #content {
+	left: 200px;
+}
+#content, #menu {
+	/*-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000; -- backface-visibility breaks static image bg*/
+}
+#toggleMenu {
+	position: fixed;
+	left: 10px;
+	top: 4px;
+	text-decoration: none;
+	/*color: gray;*/
+	text-shadow: 0px 0px 1px silver;
+	z-index: 200;
+}
+@media screen and (min-width: 820px) {
+	#toggleMenu {
+		display: none;
+	}
+	#sidebar {
+		display: block;
+	}
+	#content {
+		position: absolute;
+		left: 200px;
+		padding-top: 64px;
+		padding-bottom: 64px;
+		right: 0px;
+	}
+}
+@media screen and (max-width: 819px) {
+	#content {
+		position: relative;
+		padding-top: 64px;
+		padding-bottom: 64px;
+	}
+}
+
+#content {
+	background-color: #E1E1E1;
+	min-height: 100%;
+	/*
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	*/
+}
+#modal_content {
+	background-color: #E1E1E1;
+}
+
+@media screen and (min-width: 1020px) {
+	#content .block {
+		margin: 10px;
+		max-width: 800px;
+		margin: auto;
+	}
+}
+@media screen and (max-width: 1019px) {
+	#content .block {
+		width: 90%;
+		margin: auto;
+		min-width: 200px;
+	}
+}
+#modal_content .block {
+	background-color: #FBFBFB;
+	padding: 30px 15px;
+	box-shadow: 0px 0px 4px gray;
+	font-family: 'Open Sans Condensed', sans-serif;
+	/* no margin-bottom! */
+}
+#content .block {
+	background-color: #FBFBFB;
+	padding: 30px 15px;
+	box-shadow: 0px 0px 4px gray;
+	font-family: 'Open Sans Condensed', sans-serif;
+	margin-bottom: 20px;
+}
+#modal_content .block h1, #content .block h1, .floatingWindow .block h1 {
+	font-size: 40px;
+}
+#modal_content .block h2, #content .block h2, .floatingWindow .block h2 {
+	font-size: 16px;
+	font-weight: normal;
+}
+#modal_content .block h3, #content .block h3, .floatingWindow .block h3 {
+	font-size: 20px;
+	margin: 8px 0px;
+}
+#modal_content .block p, #content .block p, .floatingWindow .block p {
+	
+}
+#modal_content .block div.spanImage, #content .block div.spanImage, .floatingWindow .block div.spanImage {
+	width: 100%;
+	height: 320px;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+#content .block.moreLoad {
+	text-align: center;
+	cursor: pointer;
+	padding: 8px;
+}
+#content .block.moreLoad:hover {
+	background-color: #428BEB;
+}
+
+/* grids are a bit different than previous versions. */
+.grid {
+	width: 100%;
+	min-width: 256px;
+}
+.grid label {
+	display: block;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: white;
+	font-size: 12px;
+	padding: 2px;
+	height: 20px;
+}
+.grid label.playIcon {
+	background-image: url(../img/icons/w-play.png);
+	background-size: 18px;
+	background-position: 5px center;
+	background-repeat: no-repeat;
+	padding-left: 22px;
+}
+.grid .cell {
+	display: inline-block;
+	position: relative;
+	background-size: cover;
+	background-position: center center;
+}
+.grid .cell:hover {
+	cursor: pointer;
+	opacity: 0.75;
+	-webkit-filter: brightness(120%);
+}
+.grid .cell1x1 {
+}
+.grid .cell2x1 {
+}
+
+
+.column_container {
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+.column_one {
+	width: 32%;
+	display: inline-block;
+	text-align: center;
+}
+.column_two {
+	width: 66%;
+	display: inline-block;
+	text-align: center;
+}
+
+#modal {
+	display: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+@media screen and (min-width: 820px) {
+	#modal_content {
+		width: 800px;
+	}
+}
+@media screen and (max-width: 819px) {
+	#modal_content {
+		min-width: 300px;
+		width: 80%;
+	}
+}
+#modal_content {
+	background-color: white;
+	border: solid 10px silver;
+	text-align: left;
+	box-shadow: 0px 0px 80px black;
+	overflow: auto;
+	max-height: 100%;
+}
+
+div.profilePicture {
+	width: 128px;
+	height: 128px;
+	background-color: white;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	box-shadow: 0px 0px 6px black, 0px 0px 2px black;
+}
+.standardLink {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.messengerAvailable, .messengerBusy, .messengerAway, .messengerInvisible {
+	font-size: 32px;
+	line-height: 16px;
+	position: relative;
+	top: 4px;
+}
+.messengerAvailable {
+	color: lightgreen;
+}
+.messengerBusy {
+	color: pink;
+}
+.messengerAway {
+	color: yellow;
+}
+.messengerInvisible {
+	color: white;
+}
+
+/* underlay */
+#underlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-color: #428BEB;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+/* floating windows */
+.floatingWindow {
+	position: fixed;
+	box-shadow: 0px 0px 3px silver;
+	background-color: white;
+	padding: 2px 8px;
+}
+
+/* News Feed */
+.feedBlock {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.feedBlock blockquote {
+	position: relative;
+	margin-top: 20px;
+	padding: 20px 20px 20px 50px;
+}
+.feedBlock blockquote:before {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding-left: 10px;
+	display: block;
+	content: "\201C";
+	font-size: 80px;
+	color: #7a7a7a;
+}
+.feedBlock cite {
+	color: #999999;
+	font-size: 14px;
+	display: block;
+	margin-top: 5px;
+}
+.feedBlock cite:before {
+	content: "\2014 \2009";
+}
+.feedBlock cite div.citeProfilePicture {
+	width: 32px;
+	height: 32px;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: relative;
+	top: 12px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+@media screen and (max-width: 650px) {
+	.feedBlock cite div.citeProfilePicture {
+		display: inline-block;
+	}
+	.feedBlock .dateBlock {
+		display: none;
+	}
+	.feedBlock .feedBar {
+		height: 54px;
+		position: relative;
+		font-size: 12px;
+		line-height: 1.45;
+	}
+	.feedBlock .feedBar h1.title {
+		font-size: 24px !important;
+	}
+	.feedBlock .feedBar .titleContainer {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+	.feedBlock .feedBar .feedProfileImage {
+		display: none;
+	}
+}
+@media screen and (min-width: 651px) {
+	.feedBlock cite div.citeProfilePicture {
+		display: none;
+	}
+	.feedBlock .dateBlock_fulltime {
+		display: none;
+	}
+	.feedBlock .feedBar {
+		height: 100px;
+		position: relative;
+		font-size: 12px;
+		line-height: 1.45;
+	}
+	.feedBlock .feedBar h1.title {
+		font-size: 32px !important;
+	}
+	.feedBlock .feedBar .titleContainer {
+		margin-left: 120px;
+		margin-right: 120px;
+	}
+	.feedBlock .feedBar .feedProfileImage {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 100px;
+		height: 100px;
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+.feedBlock .dateBlock {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	color: #5a5a5a;
+}
+.feedBlock .dateBlock_month {
+	display: block;
+	font-size: 14px;
+	margin-bottom: -10px;
+}
+.feedBlock .dateBlock_day {
+	display: block;
+	font-size: 48px;
+	margin-bottom: -10px;
+}
+.feedBlock .dateBlock_year {
+	display: block;
+	font-size: 10px;
+}
+.feedBlock .dateBlock_time {
+	display: block;
+	font-size: 10px;
+}
+
+/* Block Tabs */
+@media screen and (min-width: 1020px) {
+	.blockTab  {
+		margin: 10px;
+		max-width: 800px;
+		margin: auto;
+	}
+}
+@media screen and (max-width: 1019px) {
+	.blockTab  {
+		width: 90%;
+		margin: auto;
+		min-width: 200px;
+	}
+}
+.blockTab .tab {
+	display: inline-block;
+	padding: 4px 8px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	background-color: #cecece;
+	cursor: pointer;
+}
+.blockTab .tab.active {
+	background-color: white;
+}
+.blockTab .tab:hover {
+	background-color: white;
+}
+.block .tabContent {
+	display: none;
+}
+.block .tabContent.active {
+	display: block;
+}

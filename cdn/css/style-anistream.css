@@ -1,0 +1,37 @@
+#video {
+	width: 100%;
+}
+#userinput {
+	font-size: 14px;
+	margin: 0px;
+	width: 100%;
+	margin-top: 10px;
+}
+#messages {
+}
+#messages span.chatMessage {
+	background-size: 24px;
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+}
+#messages .chatBlock {
+	position: relative;
+	width: 100%;
+	min-height: 32px;
+	margin-bottom: 4px;
+}
+#messages .chatProfilePicture {
+	position: absolute; 
+	left: 0px;
+	top: 0px;
+	width: 32px;
+	height: 32px;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+#messages .chatMessage {
+	padding-top: 4px;
+	padding-left: 40px;
+	word-wrap: break-word;
+}

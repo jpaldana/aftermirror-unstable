@@ -1,0 +1,44 @@
+@keyframes animatedBackground {
+    to { background-position-x: 100%; }
+}
+@-moz-keyframes animatedBackground {
+    to { background-position-x: 100%; }
+}
+@-webkit-keyframes animatedBackground {
+    to { background-position-x: 100%; }
+}
+@-ms-keyframes animatedBackground {
+    to { background-position-x: 100%; }
+}
+@-o-keyframes animatedBackground {
+    to { background-position-x: 100%; }
+}
+
+html, body {
+	background-color: #8EC1DA;
+	height: 100%;
+}
+.backgroundScroller {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: 190px;
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+	animation: animatedBackground 40s linear infinite;
+	-moz-animation: animatedBackground 40s linear infinite;
+	-webkit-animation: animatedBackground 40s linear infinite;
+	-ms-animation: animatedBackground 40s linear infinite;
+	-o-animation: animatedBackground 40s linear infinite;
+}
+
+.loginDialog {
+	border: none;
+}
+.fxBackground:focus {
+	background-color: #E1E1E1;
+}
+input[type='text'], input[type='password'] {
+	border: none;
+}

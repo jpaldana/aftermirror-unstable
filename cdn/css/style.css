@@ -1,0 +1,158 @@
+/* Base configuration */
+* {
+	/*color: black;*/
+	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+}
+
+/* Generic elements */
+@media screen and (max-width: 850px) {
+	.dialog {
+		width: 95%;
+		margin: auto;
+		border: solid 1px black;
+		height: 360px;
+	}
+}
+@media screen and (min-width: 851px) {
+	.dialog {
+		width: 640px;
+		margin: auto;
+		border: solid 1px black;
+		height: 360px;
+	}
+}
+.dialog .title {
+	font-size: 32px;
+	margin-top: 0.5em;
+	margin-left: 1em;
+}
+.dialog .subtitle {
+	font-size: 12px;
+	color: gray;
+	margin-left: 2.75em;
+	font-weight: normal;
+}
+
+.popup {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	right: 20px;
+	padding: 20px;
+	font-weight: bold;
+}
+.popup.error {
+	background-color: #F26D6D;
+	background-image: url(../img/icons/error.png);
+	background-position: 1em 1em;
+	background-repeat: no-repeat;
+	padding-left: 3em;
+}
+
+form {
+	position: relative;
+}
+form label {
+	color: gray;
+}
+form label.textboxLabel {
+	margin-left: 2em;
+}
+form label.checkboxLabel {
+	font-size: 12px;
+	position: relative;
+	top: -0.25em;
+}
+form input[type='text'], form input[type='password'], form input[type='file'] {
+	display: block;
+	width: 90%;
+	margin: 6px auto;
+	padding: 4px 8px;
+	font-size: 24px;
+}
+form input[type='submit'], form input[type='button'], form input[type='reset'] {
+	width: 200px;
+	padding: 5px 2px;
+	border: solid 1px gray;
+	margin-bottom: 1px; /* For mobile devices. */
+}
+form input[type='submit'].fullSize, form input[type='button'].fullSize, form input[type='reset'].fullSize {
+	width: 100%;
+	padding: 5px 2px;
+	border: solid 1px gray;
+	margin-bottom: 1px; /* For mobile devices. */
+}
+form input[type='checkbox'], form input[type='radio'] {
+	margin-left: 2.5em;
+}
+form textarea {
+	display: block;
+	width: 90%;
+	margin: 6px auto;
+	padding: 4px 8px;
+	font-size: 18px;
+}
+select.noSelectStyle {
+	border: none;
+	background-color: transparent;
+}
+
+/* Hover events */
+.fxBackground {
+	-webkit-transition: background 0.2s linear;
+	-moz-transition: background 0.2s linear;
+	-ms-transition: background 0.2s linear;
+	-o-transition: background 0.2s linear;
+	transition: background 0.2s linear;
+}
+
+/* onload events */
+.fxSlide {
+	display: none;
+}
+.fxButton {
+	display: inline-block;
+	border: solid 1px gray;
+	padding: 4px 6px;
+	text-decoration: none;
+}
+.fxButton:hover {
+	background-color: white;
+	cursor: pointer;
+	box-shadow: 0px 0px 2px gray;
+}
+
+/* CSS hacks */
+.noFlow {
+	text-overflow: ellipsis;
+	word-wrap: break-all;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.vAlign {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.hAlign {
+	display: inline-block;
+}
+.hAlignContainer, .center {
+	text-align: center;
+}
+a {
+	color: inherit;
+}
